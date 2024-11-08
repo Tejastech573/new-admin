@@ -29,7 +29,7 @@ import { FaRegSmile } from "react-icons/fa";
 import { GiCardRandom } from "react-icons/gi";
 import DarkModeSwitcher from "../Header/DarkModeSwitcher";
 import Divider from "../common/Divider/Divider";
-import useAuth from "@/pages/context/AuthContext";
+import useAuth from "@/context/AuthContext";
 
 interface SidebarProps {
   sidebarOpen: boolean;

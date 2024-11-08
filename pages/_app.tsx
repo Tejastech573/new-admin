@@ -1,8 +1,8 @@
 import Loader from "@/components/common/Loader";
+import { AuthProvider } from "@/context/AuthContext";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { SnackbarProvider } from "notistack";
-import { AuthProvider } from "./context/AuthContext";
 import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {

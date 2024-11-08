@@ -7,8 +7,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import LoaderFullScreen from "../common/Loader/LoaderFullScreen";
-import useAuth from "@/pages/context/AuthContext";
 import dynamic from "next/dynamic";
+import useAuth from "@/context/AuthContext";
 
 function Login() {
   const router = useRouter();
