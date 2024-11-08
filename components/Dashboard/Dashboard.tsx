@@ -31,6 +31,7 @@ const Dashboard: React.FC = () => {
     showSnackbar("Player limit", "default");
   };
   console.log("A");
+  console.log("B");
   return (
     <div className="p-4 md:p-6 lg:p-8">
       <PopUp
