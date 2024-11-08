@@ -15,7 +15,7 @@ const DropdownUser = () => {
         href="#"
       >
         <span className="h-12 w-12 rounded-md">
-          <Image
+          {/* <Image
             width={112}
             height={112}
             className="rounded-lg"
@@ -25,7 +25,7 @@ const DropdownUser = () => {
               height: "auto",
             }}
             alt="User"
-          />
+          /> */}
         </span>
         <span className="hidden text-right lg:block">
           <div className="flex">

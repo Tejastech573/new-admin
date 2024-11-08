@@ -18,14 +18,14 @@ const Dashboard: React.FC = () => {
   const { showSnackbar } = useSnackbar();
 
   const handleServerDownChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setServerDown(event.target.checked);
     showSnackbar("server down", "default");
   };
 
   const handlePlayerLimitChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setPlayerLimit(event.target.checked);
     showSnackbar("Player limit", "default");

@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { deleteCookie, getCookie } from "cookies-next";
 import { AuthContextType, User } from "./type";
 
@@ -40,7 +40,7 @@ export function AuthProvider({
       UserId,
       UserName,
     }),
-    [user, loading, error],
+    [user, loading, error]
   );
 
   return (

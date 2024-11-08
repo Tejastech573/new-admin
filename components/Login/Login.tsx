@@ -3,13 +3,14 @@ import { loginAdmin } from "@/api/api";
 import useSnackbar from "@/hooks/useSnackbar";
 import { getCookie, setCookie } from "cookies-next";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import LoaderFullScreen from "../common/Loader/LoaderFullScreen";
-import useAuth from "@/app/context/AuthContext";
+import useAuth from "@/pages/context/AuthContext";
+import dynamic from "next/dynamic";
 
-export default function Login() {
+function Login() {
   const router = useRouter();
   const token = getCookie("token");
   const { setUser } = useAuth();
@@ -61,14 +62,14 @@ export default function Login() {
       setLoader(true);
       const response: any = await loginAdmin(
         formData.username,
-        formData.password,
+        formData.password
       );
       setUser(response.user);
       setCookie("token", response.token, { maxAge: 60 * 60 * 24 * 30 });
       setCookie("userId", response.user._id, { maxAge: 60 * 60 * 24 * 30 });
       setCookie("UserName", response.user.name, { maxAge: 60 * 60 * 24 * 30 });
       showSnackbar("Login successful", "success");
-      router.push("/dashboard");
+      // router.push("/dashpboard");
       setLoader(false);
     } catch (error: any) {
       // showSnackbar(error.response.data, "error");
@@ -79,15 +80,15 @@ export default function Login() {
   return (
     <div className="bg-opacity-00 relative flex h-screen items-center justify-center bg-black">
       <div className="absolute inset-0">
-        <Image
+        {/* <Image
           src={require("../../../public/images/logo/Image.png")}
           alt="Background Image"
           layout="fill"
           objectFit="cover"
           className="opacity-50"
-        />
+        /> */}
       </div>
-      <div className="relative z-10 mx-4 w-full max-w-lg rounded-lg bg-white bg-opacity-30 p-8 shadow-lg backdrop-blur-md sm:mx-auto">
+      <div className="relative Z-10 mx-4 w-full max-w-lg rounded-lg bg-white bg-opacity-30 p-8 shadow-lg backdrop-blur-md sm:mx-auto">
         <h2 className="text-center text-2xl font-bold leading-tight text-gray-900">
           Sign in to your account
         </h2>
@@ -177,3 +178,4 @@ export default function Login() {
     </div>
   );
 }
+export default dynamic(() => Promise.resolve(Login), { ssr: false });

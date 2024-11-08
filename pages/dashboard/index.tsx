@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "TeenPatti Gold Admin",
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <DefaultLayout>

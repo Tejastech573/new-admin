@@ -29,7 +29,7 @@ import { FaRegSmile } from "react-icons/fa";
 import { GiCardRandom } from "react-icons/gi";
 import DarkModeSwitcher from "../Header/DarkModeSwitcher";
 import Divider from "../common/Divider/Divider";
-import useAuth from "@/app/context/AuthContext";
+import useAuth from "@/pages/context/AuthContext";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -187,7 +187,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="mx-auto flex items-center justify-between gap-2 px-6 py-2 lg:py-2">
-          <Link href="/">
+          <Link href="#">
             <Image
               width={130}
               height={30}
@@ -225,7 +225,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           <nav className="mt-2 px-4 py-4 lg:mt-2 lg:px-0">
             {menuGroups.map((group, groupIndex) => (
               <div key={groupIndex}>
-                <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+                <h3 className="mb-4 ml-4 text-sm font-semibold text-black">
                   {group.name}
                 </h3>
 
@@ -252,14 +252,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <div className="flex items-center justify-between bg-gray-800 p-4">
               <div className="flex items-center space-x-3">
-                <Image
+                {/* <Image
                   width={112}
                   height={112}
                   src={"/images/user/user1.jpg"}
                   alt="User"
                   className="h-10 w-10 rounded-full object-cover"
-                />
-                <span className="text-md text-white">{user?.name}</span>
+                /> */}
+                <p className="text-md text-white">{user?.name}</p>
               </div>
               <div className="flex items-center space-x-4">
                 <FaRegBell className="text-xl text-white" />
